@@ -1,22 +1,22 @@
 FROM ubuntu:latest
 
-WORKDIR /linux_practice_level2
-
 RUN apt-get update && apt-get install -y vim
-RUN mkdir /restricted
-RUN mkdir /restricted/bin
-RUN cp /usr/bin/cat /restricted/bin/
-RUN chmod +x /restricted/bin/cat
-RUN cp /usr/bin/grep /restricted/bin/
-RUN chmod +x /restricted/bin/grep
-RUN cp /bin/ls /restricted/bin/
-RUN chmod +x /restricted/bin/ls
-RUN cp /bin/rbash /restricted/bin/
-RUN chmod +x /restricted/bin/rbash
-RUN cp /usr/bin/su /restricted/bin/
-RUN chmod +x /restricted/bin/su
-RUN cp /usr/sbin/useradd /restricted/bin/
-RUN chmod +x /restricted/bin/useradd
+RUN useradd -ms /bin/bash stage02
+WORKDIR /home/stage02/stage02
+RUN echo 'echo "Welcome to POL"' >> ../.bashrc
+RUN echo 'echo " "' >> ../.bashrc
+RUN echo 'echo " ________  ________  ___ "' >> ../.bashrc
+RUN echo 'echo "|\   __  \|\   __  \|\  \ "' >> ../.bashrc
+RUN echo 'echo "\ \  \|\  \ \  \|\  \ \  \ "' >> ../.bashrc
+RUN echo 'echo " \ \   ____\ \  \ \  \ \  \ "' >> ../.bashrc
+RUN echo 'echo "  \ \  \___|\ \  \_\  \ \  \____  "' >> ../.bashrc
+RUN echo 'echo "   \ \__\    \ \_______\ \_______\ "' >> ../.bashrc
+RUN echo 'echo "    \|__|     \|_______|\|_______| "' >> ../.bashrc
+RUN echo 'echo " "' >> ../.bashrc
+RUN echo 'echo "STAGE 02"' >> ../.bashrc
+RUN echo 'echo " "' >> ../.bashrc
+RUN echo 'echo "You can learn [ cat ], [ grep ] and [ pipe ]"' >> ../.bashrc
+
 RUN cat > file1.txt <<EOF
 secret=l
 sercet=q
@@ -34,6 +34,8 @@ secree=p
 secret=x
 EOF
 
-ENV PATH=/restricted/bin
+USER stage02
 
-CMD ["/bin/rbash"]
+CMD ["/bin/bash"]
+
+
