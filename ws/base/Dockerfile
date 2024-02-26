@@ -20,7 +20,7 @@ RUN rm -rf start.sh
 
 # 웹소켓 서버 코드를 이미지에 복사합니다.
 # 'websocket-server' 폴더에 웹소켓 서버 관련 코드가 있다고 가정합니다.
-COPY ws_pty.js /home/$stage/app/
+COPY ../src/ws_pty.js /home/$stage/app/
 
 # 작업 디렉토리 설정
 WORKDIR /home/$stage/app

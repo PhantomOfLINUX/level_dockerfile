@@ -1,5 +1,4 @@
-
-
+#!/bin/bash
 
 echo "Welcome to POL"
 echo " "

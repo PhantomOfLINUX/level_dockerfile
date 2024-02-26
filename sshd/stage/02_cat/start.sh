@@ -1,6 +1,4 @@
 
-
-
 echo "Welcome to POL"
 echo " "
 echo -e "\x1b[38;2;255;0;0m ________  ________  ___ \x1b[0m "
