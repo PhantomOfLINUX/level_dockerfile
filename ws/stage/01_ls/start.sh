@@ -1,5 +1,4 @@
-
-
+#!/bin/bash
 
 echo "Welcome to POL"
 echo " "
@@ -15,5 +14,5 @@ echo $stage
 echo " "
 echo "You can learn [ ls ] and [ option ]"
 
-cd stage01
+cd /home/$stage/$stage
 #chmod 700 /home
