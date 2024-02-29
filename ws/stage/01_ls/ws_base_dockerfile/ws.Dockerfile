@@ -10,7 +10,7 @@ WORKDIR /home
 RUN mkdir /home/ws
 
 # 웹소켓 서버 코드를 이미지에 복사합니다.
-COPY ws_pty.js /home/ws/
+COPY ./src/ws_pty.js /home/ws/
 
 # 'websocket-server' 폴더에 웹소켓 서버 관련 코드가 있다고 가정합니다.
 WORKDIR /home/ws

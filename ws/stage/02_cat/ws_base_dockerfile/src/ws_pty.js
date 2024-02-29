@@ -2,7 +2,7 @@ const WebSocket = require("ws");
 const pty = require("node-pty");
 
 // 웹 소켓 서버
-const wss = new WebSocket.Server({ port: 8080 });
+const wss = new WebSocket.Server({ port: 9002 });
 
 wss.on("connection", (ws) => {
     console.log("connection.");
