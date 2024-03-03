@@ -30,4 +30,4 @@ RUN touch .hiddenfile.txt
 WORKDIR /home/ws
 
 # 웹소켓 서버 실행 명령. 'ws_pty.js'는 웹소켓 서버의 메인 파일이라고 가정합니다.
-CMD ["node", "ws_pty.js"]
+CMD ["node", "ws_pty.js", "--port=9001"]

@@ -15,8 +15,8 @@ COPY ./src/ws_pty.js /home/ws/
 # 'websocket-server' 폴더에 웹소켓 서버 관련 코드가 있다고 가정합니다.
 WORKDIR /home/ws
 
-# 의존성 설치. 'ws' 및 'node-pty' 라이브러리를 포함한 필요한 모든 패키지를 설치합니다.
-RUN npm install node-pty ws
+# 의존성 설치. 'ws' 및 'node-pty', 'minimist' 라이브러리를 포함한 필요한 모든 패키지를 설치합니다.
+RUN npm install node-pty ws minimist
 
 # 웹소켓 서버 실행 명령. 'index.js'는 웹소켓 서버의 메인 파일이라고 가정합니다.
 CMD ls /home/ws/
