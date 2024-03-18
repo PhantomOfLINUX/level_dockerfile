@@ -1,5 +1,5 @@
 #ws_pty.js가 copy되어 있는 이미지를 가져온다.
-FROM socket_io_image:latest
+FROM polhub/socketio-base:stage01
 
 # 기존 환경 변수 및 사용자 설정을 유지할 수 있습니다.
 ENV stage=stage01
@@ -27,7 +27,7 @@ WORKDIR /home/$stage/$stage
 RUN touch file.txt
 RUN touch .hiddenfile.txt
 
-WORKDIR /home/socket_io
+WORKDIR /usr/socket_io
 
 # 웹소켓 서버 실행 명령. 'ws_pty.js'는 웹소켓 서버의 메인 파일이라고 가정합니다.
-CMD ["node", "socket_io_pty.js"]
+CMD ["node", "app.js"]

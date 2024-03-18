@@ -13,7 +13,7 @@ module.exports = (io) => {
 
         terminal.onData((data) => {
             const cleanedData = removeAnsiEscapeCodes(data); // 이스케이프 시퀀스 데이터 정리
-            socket.emit("output", cleaneddata);         // data에서 cleanedData로 변경
+            socket.emit("output", cleanedData);         // data에서 cleanedData로 변경
         });
 
         socket.on("input", (message) => {
