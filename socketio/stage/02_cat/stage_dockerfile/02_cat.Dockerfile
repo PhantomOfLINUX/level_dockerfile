@@ -2,8 +2,8 @@
 FROM ws_base_image:latest
 
 # 기존 환경 변수 및 사용자 설정을 유지할 수 있습니다.
-ENV stage=stage01
-ARG stage=stage01
+ENV stage=stage02
+ARG stage=stage02
 
 # 사용자 추가
 RUN useradd -ms /bin/bash $stage
@@ -21,13 +21,26 @@ RUN chown -R $stage /home/$stage
 # 사용자 변경
 USER $stage
 
-#ls 문제작성
-RUN mkdir /home/$stage/$stage
-WORKDIR /home/$stage/$stage
-RUN touch file.txt
-RUN touch .hiddenfile.txt
+#cat 문제작성
+RUN cat > file1.txt <<EOF
+secret=l
+sercet=q
+sercet=e
+secret=i
+seoret=v
+secrrt=z
+seeret=i
+secret=n
+seccet=f
+secrct=p
+secret=u
+sccert=e
+secree=p
+secret=x
+EOF
 
+# 아래 cmd를 실행하기위해 디렉토리 변경
 WORKDIR /home/ws
 
 # 웹소켓 서버 실행 명령. 'ws_pty.js'는 웹소켓 서버의 메인 파일이라고 가정합니다.
-CMD ["node", "ws_pty.js", "--port=9001"]
+CMD ["node", "ws_pty.js"]
