@@ -73,7 +73,7 @@ async function composeQ1() {
 }
 
 // 2번문항 환경 구성
-async function composeQ1() {
+async function composeQ2() {
     try {
         const { stdout, stderr } = await execAsync(
             'mkdir dir_A' // 환경구성 예시
