@@ -76,7 +76,7 @@ async function composeQ1() {
 async function composeQ2() {
     try {
         const { stdout, stderr } = await execAsync(
-            'mkdir dir_A' // 환경구성 예시
+            'mkdir /home/$stage/$stage/dir_A' // 환경구성 예시
         );
 
         return true;
