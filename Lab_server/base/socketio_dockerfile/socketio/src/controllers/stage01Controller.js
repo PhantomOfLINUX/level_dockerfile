@@ -48,6 +48,13 @@ exports.compose = async (req, res) => {
     }
 
     // 추가 번호 확장가능
+    if (questionIndex === 2) {
+        result = await composeQ2();
+        res.json({ success: result });
+        return;
+    }
+
+
     res.json({ success: false });
 };
 
@@ -56,6 +63,20 @@ async function composeQ1() {
     try {
         const { stdout, stderr } = await execAsync(
             'echo "AB" > ./src/public/B' // 환경구성 예시
+        );
+
+        return true;
+    } catch (error) {
+        console.error(`[compose] error: ${error}`);
+        return false;
+    }
+}
+
+// 2번문항 환경 구성
+async function composeQ1() {
+    try {
+        const { stdout, stderr } = await execAsync(
+            'mkdir dir_A' // 환경구성 예시
         );
 
         return true;
