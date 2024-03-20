@@ -106,7 +106,7 @@ async function composeQ3() {
             'touch /home/$stage/$stage/banana &&' +
             'touch /home/$stage/$stage/orange &&' +
             'touch /home/$stage/$stage/mango &&' +
-            'touch /home/$stage/$stage/applemango &&' +
+            'touch /home/$stage/$stage/.applemango &&' +
             'mkdir /home/$stage/$stage/apple' // 환경구성 예시
         );
 
