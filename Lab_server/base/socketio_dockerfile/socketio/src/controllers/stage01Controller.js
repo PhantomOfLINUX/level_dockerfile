@@ -54,6 +54,11 @@ exports.compose = async (req, res) => {
         return;
     }
 
+    if (questionIndex === 3) {
+        result = await composeQ3();
+        res.json({ success: result });
+        return;
+    }
 
     res.json({ success: false });
 };
@@ -63,7 +68,7 @@ async function composeQ1() {
     try {
         const { stdout, stderr } = await execAsync(
             'cd /home/$stage/$stage/ &&' +
-            'rm -rf * &&' +
+            'rm -rf .[!.]* * &&' +
             'touch /home/$stage/$stage/file1234.txt' // 환경구성 예시
         );
 
@@ -79,9 +84,29 @@ async function composeQ2() {
     try {
         const { stdout, stderr } = await execAsync(
             'cd /home/$stage/$stage/ &&' +
-            'rm -rf * &&' +
+            'rm -rf .[!.]* * &&' +
             'touch /home/$stage/$stage/banana &&' +
             'touch /home/$stage/$stage/orange &&' +
+            'mkdir /home/$stage/$stage/apple' // 환경구성 예시
+        );
+
+        return true;
+    } catch (error) {
+        console.error(`[compose] error: ${error}`);
+        return false;
+    }
+}
+
+// 3번문항 환경 구성
+async function composeQ3() {
+    try {
+        const { stdout, stderr } = await execAsync(
+            'cd /home/$stage/$stage/ &&' +
+            'rm -rf .[!.]* * &&' +
+            'touch /home/$stage/$stage/banana &&' +
+            'touch /home/$stage/$stage/orange &&' +
+            'touch /home/$stage/$stage/mango &&' +
+            'touch /home/$stage/$stage/applemango &&' +
             'mkdir /home/$stage/$stage/apple' // 환경구성 예시
         );
 
