@@ -62,7 +62,9 @@ exports.compose = async (req, res) => {
 async function composeQ1() {
     try {
         const { stdout, stderr } = await execAsync(
-            'echo "AB" > ./src/public/B' // 환경구성 예시
+            'cd /home/$stage/$stage/ &&' +
+            'rm -rf * &&' +
+            'touch /home/$stage/$stage/file1234.txt' // 환경구성 예시
         );
 
         return true;
@@ -76,7 +78,11 @@ async function composeQ1() {
 async function composeQ2() {
     try {
         const { stdout, stderr } = await execAsync(
-            'mkdir /home/$stage/$stage/dir_A' // 환경구성 예시
+            'cd /home/$stage/$stage/ &&' +
+            'rm -rf * &&' +
+            'touch /home/$stage/$stage/banana' +
+            'touch /home/$stage/$stage/orange' +
+            'mkdir /home/$stage/$stage/apple' // 환경구성 예시
         );
 
         return true;
