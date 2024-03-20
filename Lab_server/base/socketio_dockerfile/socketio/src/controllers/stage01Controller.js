@@ -80,8 +80,8 @@ async function composeQ2() {
         const { stdout, stderr } = await execAsync(
             'cd /home/$stage/$stage/ &&' +
             'rm -rf * &&' +
-            'touch /home/$stage/$stage/banana' +
-            'touch /home/$stage/$stage/orange' +
+            'touch /home/$stage/$stage/banana &&' +
+            'touch /home/$stage/$stage/orange &&' +
             'mkdir /home/$stage/$stage/apple' // 환경구성 예시
         );
 
