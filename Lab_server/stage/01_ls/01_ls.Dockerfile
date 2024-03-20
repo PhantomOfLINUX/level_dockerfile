@@ -24,8 +24,7 @@ USER $stage
 #ls 문제작성
 RUN mkdir /home/$stage/$stage
 WORKDIR /home/$stage/$stage
-RUN touch file.txt
-RUN touch .hiddenfile.txt
+RUN touch file1234.txt
 
 WORKDIR /usr/socket_io
 
