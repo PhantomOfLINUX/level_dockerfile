@@ -79,9 +79,8 @@ exports.compose = async (req, res) => {
 async function composeQ1() {
     try {
         const { stdout, stderr } = await execAsync(
-            'cd /home/$stage/$stage/ &&' +
-            'rm -rf .[!.]* * &&' +
-            'touch /home/$stage/$stage/file1234.txt' // 환경구성 예시
+            'cd /home/$stage/cd_pwd_stage/ &&' +
+            'rm -rf .[!.]* *'
         );
 
         return true;
@@ -95,11 +94,8 @@ async function composeQ1() {
 async function composeQ2() {
     try {
         const { stdout, stderr } = await execAsync(
-            'cd /home/$stage/$stage/ &&' +
-            'rm -rf .[!.]* * &&' +
-            'touch /home/$stage/$stage/banana &&' +
-            'touch /home/$stage/$stage/orange &&' +
-            'mkdir /home/$stage/$stage/apple' // 환경구성 예시
+            'cd /home/$stage/cd_pwd_stage/ &&' +
+            'rm -rf .[!.]* *'
         );
 
         return true;
@@ -113,13 +109,10 @@ async function composeQ2() {
 async function composeQ3() {
     try {
         const { stdout, stderr } = await execAsync(
-            'cd /home/$stage/$stage/ &&' +
-            'rm -rf .[!.]* * &&' +
-            'touch /home/$stage/$stage/banana &&' +
-            'touch /home/$stage/$stage/orange &&' +
-            'touch /home/$stage/$stage/mango &&' +
-            'touch /home/$stage/$stage/.applemango &&' +
-            'mkdir /home/$stage/$stage/apple' // 환경구성 예시
+            'cd /home/$stage/cd_pwd_stage/ &&' +
+            'rm -rf .[!.]* *' +
+            'mkdir /home/$stage/cd_pwd_stage/dir1 &&' +
+            'touch /home/$stage/cd_pwd_stage/dir1/Hello_wolrd'
         );
 
         return true;
@@ -133,17 +126,10 @@ async function composeQ3() {
 async function composeQ4() {
     try {
         const { stdout, stderr } = await execAsync(
-            'cd /home/$stage/$stage/ &&' +
-            'rm -rf .[!.]* * &&' +
-            'touch /home/$stage/$stage/Iqnoqd &&' +
-            'touch /home/$stage/$stage/llqnv &&' +
-            'touch /home/$stage/$stage/1ngoie &&' +
-            'touch /home/$stage/$stage/lingq &&' +
-            'touch /home/$stage/$stage/Ivqdz &&' +
-            'touch /home/$stage/$stage/linq &&' +
-            'touch /home/$stage/$stage/1fncfo &&' +
-            'touch /home/$stage/$stage/lazio &&' +
-            'touch /home/$stage/$stage/1inoqa' // 환경구성 예시
+            'cd /home/$stage/cd_pwd_stage/ &&' +
+            'rm -rf .[!.]* *' +
+            'mkdir /home/$stage/cd_pwd_stage/dir1 &&' +
+            'touch /home/$stage/cd_pwd_stage/dir1/Hi_wolrd'
         );
 
         return true;
@@ -157,20 +143,9 @@ async function composeQ4() {
 async function composeQ5() {
     try {
         const { stdout, stderr } = await execAsync(
-            'cd /home/$stage/$stage/ &&' +
-            'rm -rf .[!.]* * &&' +
-            'touch /home/$stage/$stage/nozs.txt &&' +
-            'touch /home/$stage/$stage/noga.tXt &&' +
-            'touch /home/$stage/$stage/nonqt.Txt &&' +
-            'touch /home/$stage/$stage/qonz.txT &&' +
-            'touch /home/$stage/$stage/inoz.tXt &&' +
-            'touch /home/$stage/$stage/qniozb.TXT &&' +
-            'touch /home/$stage/$stage/qtnioz.txT &&' +
-            'touch /home/$stage/$stage/tqnoiz.txt &&' +
-            'touch /home/$stage/$stage/qniozb.txt.txt &&' +
-            'touch /home/$stage/$stage/qtnioz.txT.txt &&' +
-            'touch /home/$stage/$stage/tqnoiz.txt.TXT &&' +
-            'touch /home/$stage/$stage/znontq.txt' // 환경구성 예시
+            'cd /home/$stage/cd_pwd_stage/ &&' +
+            'rm -rf .[!.]* *' +
+            'mkdir /home/$stage/cd_pwd_stage/dir1'
         );
 
         return true;
