@@ -16,3 +16,4 @@ echo "You can learn [ cd ] and [ pwd ]"
 
 cd /home/$stage/cd_pwd_stage
 #chmod 700 /home
+#
