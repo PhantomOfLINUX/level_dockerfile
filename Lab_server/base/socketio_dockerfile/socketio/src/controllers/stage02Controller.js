@@ -80,7 +80,8 @@ async function composeQ1() {
     try {
         const { stdout, stderr } = await execAsync(
             'cd /home/$stage/cd_pwd_stage/ &&' +
-            'rm -rf .[!.]* *'
+            'rm -rf .[!.]* *' +
+            'cd /home/$stage/cd_pwd_stage'
         );
 
         return true;
