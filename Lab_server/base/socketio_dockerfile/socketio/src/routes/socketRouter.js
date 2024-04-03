@@ -12,6 +12,8 @@ module.exports = (io) => {
 
         socket.on("input", (message) => {
             terminal.write(message);
+            //consolelog
+            //console.log(message);
         });
 
         socket.on("resize", (size) => {
