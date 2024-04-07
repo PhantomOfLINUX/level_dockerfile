@@ -22,8 +22,8 @@ RUN chown -R $stage /home/$stage
 USER $stage
 
 #cat 문제작성
-WORKDIR /home/$stage/
-
+RUN mkdir /home/$stage/$stage
+WORKDIR /home/$stage/$stage
 RUN cat > Hello.txt <<EOF
 dog
 EOF
