@@ -24,7 +24,7 @@ USER $stage
 #cat 문제작성
 WORKDIR /home/$stage/
 
-RUN cat > file1.txt <<EOF
+RUN cat > Hello.txt <<EOF
 dog
 EOF
 

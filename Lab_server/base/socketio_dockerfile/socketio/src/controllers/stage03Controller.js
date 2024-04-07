@@ -79,9 +79,12 @@ exports.compose = async (req, res) => {
 async function composeQ1() {
     try {
         const { stdout, stderr } = await execAsync(
-            'cd /home/$stage/cd_pwd_stage/ &&' +
+            'cd /home/$stage/ &&' +
             'rm -rf .[!.]* * &&' +
-            'cd /home/$stage/cd_pwd_stage'
+            'cd /home/$stage/ &&' +
+            'cat > Hello.txt <<EOF\n' +
+            'dog\n' +
+            'EOF'
         );
 
         return true;
@@ -111,7 +114,7 @@ async function composeQ3() {
     try {
         const { stdout, stderr } = await execAsync(
             'cd /home/$stage/cd_pwd_stage/ &&' +
-            'rm -rf .[!.]* * &&' +
+            'rm -rf .[!.]* *' +
             'mkdir /home/$stage/cd_pwd_stage/dir1 &&' +
             'touch /home/$stage/cd_pwd_stage/dir1/Hello_wolrd'
         );
@@ -128,7 +131,7 @@ async function composeQ4() {
     try {
         const { stdout, stderr } = await execAsync(
             'cd /home/$stage/cd_pwd_stage/ &&' +
-            'rm -rf .[!.]* * &&' +
+            'rm -rf .[!.]* *' +
             'mkdir /home/$stage/cd_pwd_stage/dir1 &&' +
             'touch /home/$stage/cd_pwd_stage/dir1/Hi_wolrd'
         );
@@ -145,7 +148,7 @@ async function composeQ5() {
     try {
         const { stdout, stderr } = await execAsync(
             'cd /home/$stage/cd_pwd_stage/ &&' +
-            'rm -rf .[!.]* * &&' +
+            'rm -rf .[!.]* *' +
             'mkdir /home/$stage/cd_pwd_stage/dir1'
         );
 
