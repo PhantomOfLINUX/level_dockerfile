@@ -6,6 +6,7 @@ const util = require("util");
 const execAsync = util.promisify(exec);
 
 // get 요청이 오면 usercount를 반환할 수 있도록 작성할 것
+
 healthChecker.get("/health", async (req, res) => {
     try {
         const { stdout, stderr } = await execAsync("who | wc -l");
