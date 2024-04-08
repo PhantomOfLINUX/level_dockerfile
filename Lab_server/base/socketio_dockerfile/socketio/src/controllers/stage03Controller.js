@@ -82,8 +82,8 @@ async function composeQ1() {
             'cd /home/$stage/ &&' +
             'rm -rf .[!.]* * &&' +
             'cd /home/$stage/ &&' +
-            'cat > Hello.txt <<EOF\n' +
-            'dog\n' +
+            'cat > Hello.txt <<EOF\n &&' +
+            'dog\n &&' +
             'EOF'
         );
 
