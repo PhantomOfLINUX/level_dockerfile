@@ -80,11 +80,7 @@ async function composeQ1() {
     try {
         const { stdout, stderr } = await execAsync(
             'cd /home/$stage/ &&' +
-            'rm -rf .[!.]* * &&' +
-            'cd /home/$stage/ &&' +
-            'cat > Hello.txt <<EOF\n &&' +
-            'dog\n &&' +
-            'EOF'
+            'rm -rf .[!.]* *'
         );
 
         return true;
